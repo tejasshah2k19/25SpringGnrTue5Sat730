@@ -1,0 +1,25 @@
+
+
+after project  create follow below steps ->  
+
+1) create webapp folder inside main folder if not exists 
+2) create WEB-INF folder inside webapp folder 
+3) create views folder inside WEB-INF folder 
+
+	src/main/webapp/WEB-INF/views 
+	
+4)  application.properties 
+			server.port=9999 
+			
+	spring.mvc.view.prefix=/WEB-INF/views/
+	spring.mvc.view.suffix=.jsp
+	
+5) lib -> tomcat embeded jasper 
+	pom.xml 
+ 	<dependency>
+    	<groupId>org.apache.tomcat.embed</groupId>
+    	<artifactId>tomcat-embed-jasper</artifactId>
+ 	</dependency> 
+	
+----------------------------------------------------------------------------	
+	
