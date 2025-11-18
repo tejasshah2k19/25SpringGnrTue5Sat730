@@ -22,4 +22,71 @@ after project  create follow below steps ->
  	</dependency> 
 	
 ----------------------------------------------------------------------------	
+how to create controller ? 
+	controller is a class - java class 
+	we will create controller inside com/controller folder 
+			we need to create controller folder inside com folder 
+			
+	right click on controller folder -> new -> class -> SessionController -> finish 
+	after creation of class add @Controller annotation above the class name 
+	e.g 
 	
+	@Controller
+	public class SessionController {
+	
+	}
+		
+----------------------------------------------------------------------------	
+	create CalcController with 
+			mapping inputcalc url that will open InputCalc.jsp 
+					InputCalc.jsp having a form with two fields and 1 button 
+					 
+								No.1[     ] 
+								No.2[     ] 
+								
+								[Submit] 
+	
+----------------------------------------------------------------------------	
+	Signup.jsp
+			FirstName
+			LastName
+			Email
+			Password 
+	[Login]				[ForgetPassword] 		
+			
+			
+	Login.jsp 
+			Email
+			Password
+	[Signup]		 [ForgetPassword]
+	
+	
+	ForgetPassword
+	
+			Email 
+	[Login]				[Signup] 
+	
+----------------------------------------------------------------------------	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		

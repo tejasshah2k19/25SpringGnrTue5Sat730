@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Signup</h2>
+	<h2>Login</h2>
+	<br>
 	
-	<a href="login">Existing User?</a>
+	<a href="signup">New User?</a>
 </body>
 </html>
