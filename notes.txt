@@ -52,18 +52,22 @@ how to create controller ?
 			LastName
 			Email
 			Password 
+					[submit]
 	[Login]				[ForgetPassword] 		
 			
 			
 	Login.jsp 
 			Email
 			Password
+			
+					[submit]
 	[Signup]		 [ForgetPassword]
 	
 	
 	ForgetPassword
 	
 			Email 
+				[submit]
 	[Login]				[Signup] 
 	
 ----------------------------------------------------------------------------	
