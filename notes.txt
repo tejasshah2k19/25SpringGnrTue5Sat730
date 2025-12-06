@@ -72,9 +72,46 @@ how to create controller ?
 	
 ----------------------------------------------------------------------------	
 	
+	Student Registration ->
+			
+			firstName
+			email 
+			
+			enrollmentYear 
+			
+			age 
+			
+			[submit] 
+			
+			
+			
+	@Getmapping -> open jsp 
+	@Postmapping -> 
+						1) read all the form data - input 
+						2) validation - spring 
+						3) validation - no error -> next PrintStudent.jsp -> print
+						4) validation - error -> previous InputStudent.jsp -> error print 
+									
+-------------------------------------------------------------------------------------------
+			
+	
+//spring --> StudentController -> memory life cycle -> singleton 
+//spring -> spring bean 
 	
 	
+-------------------------------------------------------------------------------------------
+spring data validations: 
 	
+	1)	jar / lib / dep 
+			pom.xml : validation 
+			add starter 
+	
+	2) use annotation for validation in bean class 
+	 
+	3) test your validation using @Validated annotation 
+	
+-------------------------------------------------------------------------------------------
+	 
 	
 	
 	
