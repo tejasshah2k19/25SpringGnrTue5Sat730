@@ -1,0 +1,16 @@
+
+
+create databse gnrspring;
+
+use gnrspring; 
+
+create table students(
+	studentId int primary key auto_increment,
+	firstName varchar(20),
+	lastName varchar(20),
+	email varchar(30),
+	password varchar(60)
+);
+
+alter table students add column age integer; 
+alter table students add column enrollmentYear varchar(5);

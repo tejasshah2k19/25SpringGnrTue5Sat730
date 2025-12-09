@@ -111,10 +111,73 @@ spring data validations:
 	3) test your validation using @Validated annotation 
 	
 -------------------------------------------------------------------------------------------
-	 
+spring -> database 
+	
+		no need to create DbConnection -> logic 
+		
+
+
+step 1: 
+		jar -> 1) mysql connector 
+	 		   2) spring data jdbc [ JdbcTemplate ]	
+	
+step 2: 
+		application.properties 
+			url 
+			userName
+			password 
+-----------------------------------------------------------------------------------------------			
+	
+	query -> 
+		JdbcTemplate 
+	@Autowired 
+	JdbcTemplate stmt;
+	
+	Singleton design pattern -> 
+	
+	1) if object not exists in memory then create 
+	2) if object exists in memory then reuse it 
+	
+	
+	4 stereotype -> class singleton 
+		@Controller
+		@Repository 
+		@Service
+		@Component 
+		
+		
+	@Autowired -> instance -> new  | existing 
+	
+	
+-----------------------------------------------------------------------------------------------			
+PreparedStatement 
+ResultSet executeQuery()  -> select 
+int executeUpdate() -> insert delete update  		
+execute() ->
+
+-----------------------------------------------------------------------------------------------			
+JdbcTemplate -> 
+					1) update() -> insert , update , delete 
+					2) query()  -> select 0 or more records 
+					3) queryForObject()  -> select  exactly 1 record --> exception 
+
+-----------------------------------------------------------------------------------------------
+
+
+					
+
+
+ 
 	
 	
 	
+	
+	
+	
+	
+	
+	
+		
 	
 	
 	
