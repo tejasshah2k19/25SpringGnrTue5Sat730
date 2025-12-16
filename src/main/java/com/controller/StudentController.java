@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +22,6 @@ public class StudentController {
 
 	@Autowired
 	StudentDao studentDao;
-	
 	
 	//url 
 	@GetMapping("/is")
@@ -46,4 +47,18 @@ public class StudentController {
 		studentDao.addStudent(studentBean);
 		return "PrintStudent";
 	}
+	
+	//open ListStudent.jsp 
+	@GetMapping("liststudents")
+	public String listStudent(Model model) {
+		List<StudentBean> students = studentDao.getAllStudents(); 
+		//controller -> jsp -> data send ->
+		model.addAttribute("students",students);
+		return "ListStudent";
+	}
+	
+	
+	
+	
+	
 }
