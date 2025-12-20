@@ -25,6 +25,7 @@
 				<th>FirstName</th>
 				<th>LastName</th>
 				<th>Email</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -36,6 +37,7 @@
 				<td><%=s.getFirstName()%></td>
 				<td><%=s.getLastName()%></td>
 				<td><%=s.getEmail()%></td>
+				<td><a href="deleteStudent?studentId=<%=s.getStudentId()%>">Delete</a></td>
 			</tr>
 			<%
 			}

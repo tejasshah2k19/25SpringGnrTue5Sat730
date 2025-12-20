@@ -30,4 +30,11 @@ public class StudentDao {
 		return students;
 	}
 
+	public void deleteStudentById(Integer studentId) {
+//		String deleteQuery = "delete from students where studentId = ? ";
+//		stmt.update(deleteQuery,studentId); 
+		stmt.update("delete from students where studentId = ?", studentId);
+
+	}
+
 }

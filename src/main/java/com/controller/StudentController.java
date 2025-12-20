@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bean.StudentBean;
 import com.dao.StudentDao;
- 
 
 //spring --> StudentController -> memory life cycle -> singleton 
 //spring -> spring bean 
@@ -22,43 +21,44 @@ public class StudentController {
 
 	@Autowired
 	StudentDao studentDao;
-	
-	//url 
+
+	// url
 	@GetMapping("/is")
 	public String openInputStudent() {
-		return "InputStudent";//jsp name 
+		return "InputStudent";// jsp name
 	}
-	
-	
+
 	@GetMapping("newstudent") // url name
 	public String addStudent() {// method name
 		return "InputStudent";// jsp
 	}
-	
+
 	@PostMapping("saveStudent")
-	public String saveStudent(@Validated StudentBean studentBean,BindingResult result,Model model) {
-		//read all input : form
-		//bean 
-		//validation 
-		if(result.hasErrors() == true ) {
-			model.addAttribute("result",result);
+	public String saveStudent(@Validated StudentBean studentBean, BindingResult result, Model model) {
+		// read all input : form
+		// bean
+		// validation
+		if (result.hasErrors() == true) {
+			model.addAttribute("result", result);
 			return "InputStudent";
 		}
 		studentDao.addStudent(studentBean);
 		return "PrintStudent";
 	}
-	
-	//open ListStudent.jsp 
+
+	// open ListStudent.jsp
 	@GetMapping("liststudents")
 	public String listStudent(Model model) {
-		List<StudentBean> students = studentDao.getAllStudents(); 
-		//controller -> jsp -> data send ->
-		model.addAttribute("students",students);
+		List<StudentBean> students = studentDao.getAllStudents();
+		// controller -> jsp -> data send ->
+		model.addAttribute("students", students);
 		return "ListStudent";
 	}
-	
-	
-	
-	
-	
+
+	@GetMapping("deleteStudent")
+	public String deleteStudent(Integer studentId, Model model) {
+		studentDao.deleteStudentById(studentId);
+		return "redirect:/liststudents";//url
+	}
+
 }

@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 public class StudentBean {
+	
+	private Integer studentId; 
 
 	@Pattern(regexp = "[a-zA-Z]+", message = "Please Enter Valid FirstName")
 	@NotBlank(message = "Please Enter FirstName")
@@ -27,6 +29,15 @@ public class StudentBean {
 
 	@NotBlank
 	private String password;
+
+	
+	public Integer getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(Integer studentId) {
+		this.studentId = studentId;
+	}
 
 	public String getFirstName() {
 		return firstName;
