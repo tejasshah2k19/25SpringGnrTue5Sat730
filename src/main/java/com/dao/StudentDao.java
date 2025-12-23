@@ -37,4 +37,22 @@ public class StudentDao {
 
 	}
 
+	public StudentBean getStudentById(Integer studentId) {
+		// JdbcTemplate
+		// update
+		// query
+		// queryForObject -> 1 0 1+ -> exception
+
+		try {
+			StudentBean studentBean = stmt.queryForObject("select * from students where studentId = ?",
+					new BeanPropertyRowMapper<>(StudentBean.class), studentId);
+			return studentBean;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
 }

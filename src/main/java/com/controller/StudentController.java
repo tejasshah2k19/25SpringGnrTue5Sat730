@@ -43,7 +43,8 @@ public class StudentController {
 			return "InputStudent";
 		}
 		studentDao.addStudent(studentBean);
-		return "PrintStudent";
+		//
+		return "redirect:/liststudents";
 	}
 
 	// open ListStudent.jsp
@@ -58,7 +59,15 @@ public class StudentController {
 	@GetMapping("deleteStudent")
 	public String deleteStudent(Integer studentId, Model model) {
 		studentDao.deleteStudentById(studentId);
-		return "redirect:/liststudents";//url
+		return "redirect:/liststudents";// url
+	}
+
+	@GetMapping("viewStudent")
+	public String viewStudent(Integer studentId, Model model) {
+		StudentBean studentBean = studentDao.getStudentById(studentId);
+		model.addAttribute("student", studentBean);
+
+		return "ViewStudent";
 	}
 
 }

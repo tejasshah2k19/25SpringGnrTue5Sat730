@@ -37,7 +37,13 @@
 				<td><%=s.getFirstName()%></td>
 				<td><%=s.getLastName()%></td>
 				<td><%=s.getEmail()%></td>
-				<td><a href="deleteStudent?studentId=<%=s.getStudentId()%>">Delete</a></td>
+				<td><a href="deleteStudent?studentId=<%=s.getStudentId()%>">Delete</a>
+					|
+					<a href="viewStudent?studentId=<%=s.getStudentId()%>">View</a>
+					|
+					<a href="editStudent?studentId=<%=s.getStudentId()%>">Edit</a>
+					
+				</td>
 			</tr>
 			<%
 			}
