@@ -163,15 +163,52 @@ JdbcTemplate ->
 
 -----------------------------------------------------------------------------------------------
 
+mail api -> 
 
-					
-
-
- 
+		gmail 
+		mailchimp
+		sendgrid
+		mailgun
+		twillio
+		 
+		
+step 1: 
+			dep / lib / jar 
+			java mailer
+							
+step 2:
+		mail configuration 
+		application.properties 
+		
+		# Gmail SMTP configuration
+		spring.mail.host=smtp.gmail.com
+		spring.mail.port=587
+		spring.mail.username=your_email@gmail.com
+		spring.mail.password=your_app_password
+		
+		# Mail properties
+		spring.mail.properties.mail.smtp.auth=true
+		spring.mail.properties.mail.smtp.starttls.enable=true
+		spring.mail.properties.mail.smtp.starttls.required=true
+		spring.mail.properties.mail.smtp.connectiontimeout=5000
+		spring.mail.properties.mail.smtp.timeout=5000
+		spring.mail.properties.mail.smtp.writetimeout=5000
+		
+		# Optional (debug)
+		spring.mail.properties.mail.debug=true
+				
 	
-	
-	
-	
+step 3:	Service Class -> Mail sending Logic 
+			create method and send mail using JavaMailSender 
+			
+step 4: create instance of MailerService in controller and 
+			call service method - sendWelcomeMail()
+			
+	 
+		
+		
+		
+		
 	
 	
 	

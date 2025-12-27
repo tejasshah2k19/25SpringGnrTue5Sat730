@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bean.StudentBean;
 import com.dao.StudentDao;
+import com.service.MailerService;
 
 //spring --> StudentController -> memory life cycle -> singleton 
 //spring -> spring bean 
@@ -22,6 +23,9 @@ public class StudentController {
 	@Autowired
 	StudentDao studentDao;
 
+	@Autowired
+	MailerService mailerService; 
+	
 	// url
 	@GetMapping("/is")
 	public String openInputStudent() {
@@ -43,7 +47,10 @@ public class StudentController {
 			return "InputStudent";
 		}
 		studentDao.addStudent(studentBean);
-		//
+
+		//sendwelcomemail 
+		mailerService.sendWelcomeMail(studentBean.getEmail());
+		
 		return "redirect:/liststudents";
 	}
 
